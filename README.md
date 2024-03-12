@@ -16,7 +16,10 @@ mvn clean install
 Заранее создаем нужную нам БД, в нашем случае это ```shop```, указываем пользователя, пароль и порт.
 
 
-5. После запуска программы можно заполнить данными нашу БД. Для этого нужно сделать SQL запросы.
+5. Запускаем программу ```src/main/java/com/example/demo/ElectronicsStoreApplication.java```.
+
+
+6.  После запуска программы можно заполнить данными нашу БД. Для этого нужно сделать SQL запросы.
 Для начала переходим в файл ```src/main/resources/db.migration/insert_into_tech_entity.sql```
 где выполняем запросы на вставку записей в реестр(в таблицу ```tech_entity```).
 После чего можем заполнить все остальные данные в файле, переходим в ```src/main/resources/db.migration/insert_data.sql``` и выолняем там SQL запросы.
@@ -24,6 +27,5 @@ mvn clean install
 #### ```Важно``` делать последовательно, сначало ```insert_into_tech_entity.sql```, а потом ```insert_data.sql```
 
 
-6. Запускаем программу ```src/main/java/com/example/demo/ElectronicsStoreApplication.java```.
 
-Для просмотра документации и использования запросов переходим в SwaggerUI (http://localhost:8080/swagger-ui/index.html)
+### Для просмотра документации и использования запросов переходим в SwaggerUI (http://localhost:8080/swagger-ui/index.html)
