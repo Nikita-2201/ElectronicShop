@@ -13,10 +13,15 @@ import java.util.List;
 
 @Service
 public class TelevisionService {
+
+    private final TelevisionRepository televisionRepository;
+    private final TechEntityService techEntityService;
+
     @Autowired
-    private TelevisionRepository televisionRepository;
-    @Autowired
-    private TechEntityService techEntityService;
+    public TelevisionService(TelevisionRepository televisionRepository, TechEntityService techEntityService){
+        this.televisionRepository = televisionRepository;
+        this.techEntityService = techEntityService;
+    }
 
     public Television saveTelevision(Television television) {
         TechEntity techEntity = television.getTechEntity();

@@ -15,11 +15,16 @@ import java.util.List;
 
 @Service
 public class VacuumCleanerService {
-    @Autowired
-    private VacuumCleanerRepository vacuumCleanerRepository;
-    @Autowired
-    private TechEntityService techEntityService;
 
+    private final VacuumCleanerRepository vacuumCleanerRepository;
+    private final TechEntityService techEntityService;
+
+
+    @Autowired
+    public VacuumCleanerService(VacuumCleanerRepository vacuumCleanerRepository, TechEntityService techEntityService){
+        this.vacuumCleanerRepository = vacuumCleanerRepository;
+        this.techEntityService = techEntityService;
+    }
 
     public VacuumCleaner saveVacuumCleaner(VacuumCleaner vacuumCleaner) {
         TechEntity techEntity = vacuumCleaner.getTechEntity();

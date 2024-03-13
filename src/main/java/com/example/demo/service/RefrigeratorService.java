@@ -14,10 +14,16 @@ import java.util.List;
 
 @Service
 public class RefrigeratorService {
+
+    private final RefrigeratorRepository refrigeratorRepository;
+
+    private final TechEntityService techEntityService;
+
     @Autowired
-    private RefrigeratorRepository refrigeratorRepository;
-    @Autowired
-    private TechEntityService techEntityService;
+    public RefrigeratorService(RefrigeratorRepository refrigeratorRepository, TechEntityService techEntityService){
+        this.refrigeratorRepository = refrigeratorRepository;
+        this.techEntityService = techEntityService;
+    }
 
     public Refrigerator saveRefrigerator(Refrigerator refrigerator) {
         TechEntity techEntity = refrigerator.getTechEntity();

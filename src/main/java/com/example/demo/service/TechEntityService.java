@@ -12,7 +12,7 @@ import java.util.Optional;
 @Service
 public class TechEntityService {
 
-    @Autowired
+
     private final TechEntityRepository techEntityRepository;
     @Autowired
     public TechEntityService(TechEntityRepository techEntityRepository) {

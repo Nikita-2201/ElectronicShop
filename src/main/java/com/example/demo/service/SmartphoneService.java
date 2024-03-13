@@ -12,10 +12,15 @@ import java.util.List;
 
 @Service
 public class SmartphoneService {
+
+    private final SmartphoneRepository smartphoneRepository;
+
+    private final TechEntityService techEntityService;
     @Autowired
-    private SmartphoneRepository smartphoneRepository;
-    @Autowired
-    private TechEntityService techEntityService;
+    public SmartphoneService(SmartphoneRepository smartphoneRepository, TechEntityService techEntityService){
+        this.smartphoneRepository = smartphoneRepository;
+        this.techEntityService = techEntityService;
+    }
 
     public Smartphone saveSmartphone(Smartphone smartphone) {
         TechEntity techEntity = smartphone.getTechEntity();

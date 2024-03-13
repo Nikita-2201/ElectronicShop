@@ -13,10 +13,16 @@ import java.util.List;
 
 @Service
 public class ComputerService {
+
+    private final ComputerRepository computerRepository;
+
+    private final TechEntityService techEntityService;
+
     @Autowired
-    private ComputerRepository computerRepository;
-    @Autowired
-    private TechEntityService techEntityService;
+    public ComputerService(ComputerRepository computerRepository, TechEntityService techEntityService){
+        this.computerRepository = computerRepository;
+        this.techEntityService = techEntityService;
+    }
 
     public Computer saveComputer(Computer computer) {
         TechEntity techEntity = computer.getTechEntity();
